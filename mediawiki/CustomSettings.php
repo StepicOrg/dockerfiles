@@ -1,5 +1,8 @@
 <?php
 
+$wgLogo = "https://stepik.org/static/classic/ico/favicon_128.png";
+$wgFavicon = "https://stepik.org/static/classic/ico/favicon.ico";
+
 $wgGroupPermissions['*']['edit'] = false;
 $wgGroupPermissions['*']['createpage'] = false;
 $wgGroupPermissions['*']['createtalk'] = false;
