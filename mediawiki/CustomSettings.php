@@ -43,7 +43,7 @@ $wgMathFullRestbaseURL='https://api.formulasearchengine.com/';
 
 require_once "$IP/extensions/OpenID/OpenID.php";
 
-$wgOpenIDLoginOnly=false;
+$wgOpenIDLoginOnly=true;
 $wgOpenIDMode='consumer';
 $wgOpenIDTrustEmailAddress=true;
 $wgOpenIDForcedProvider = 'https://stepik.org/openid/xrds/';

@@ -29,7 +29,12 @@ RUN wget https://extdist.wmflabs.org/dist/extensions/CategoryTree-REL1_28-824260
 RUN wget https://github.com/StepicOrg/mediawiki-extensions-OpenID/archive/REL1_27.tar.gz \
     && tar -xzf REL1_27.tar.gz -C /usr/src/mediawiki/extensions/ \
     && mv /usr/src/mediawiki/extensions/mediawiki-extensions-OpenID-REL1_27 /usr/src/mediawiki/extensions/OpenID \
-    && rm REL1_27.tar.gz
+    && rm REL1_27.tar.gz \
+    && wget https://github.com/openid/php-openid/archive/2.3.0.tar.gz \
+    && tar -xzf 2.3.0.tar.gz \
+    && mv php-openid-2.3.0/Auth /usr/src/mediawiki/extensions/OpenID/Auth \
+    && rm 2.3.0.tar.gz \
+    && rm -rf php-openid-2.3.0
 
 # install Math
 RUN wget https://extdist.wmflabs.org/dist/extensions/Math-REL1_27-ba08a3a.tar.gz \
