@@ -16,6 +16,7 @@ $wgGroupPermissions['sysop']['createtalk'] = true;
 $wgGroupPermissions['sysop']['move'] = true;
 
 $wgAllowImageTag = true;
+$wgEnableUploads = true;
 
 $wgJobRunRate = 1000;
 $wgRunJobsAsync = false;
