@@ -47,9 +47,9 @@ $wgMathFullRestbaseURL='https://api.formulasearchengine.com/';
 
 require_once "$IP/extensions/OpenID/OpenID.php";
 
-$wgOpenIDLoginOnly=true;
-$wgOpenIDMode='consumer';
-$wgOpenIDTrustEmailAddress=true;
+$wgOpenIDLoginOnly = true;
+$wgOpenIDMode = 'consumer';
+$wgOpenIDTrustEmailAddress = true;
 $wgOpenIDForcedProvider = 'https://stepik.org/openid/xrds/';
 $wgOpenIDAllowExistingAccountSelection = false;
 $wgOpenIDAllowAutomaticUsername = false;
@@ -59,3 +59,10 @@ require_once "$IP/extensions/DeleteBatch/DeleteBatch.php";
 
 $wgGroupPermissions['bureaucrat']['deletebatch'] = false;
 $wgGroupPermissions['sysop']['deletebatch'] = true;
+
+require_once "$IP/extensions/Collection/Collection.php";
+
+$wgCollectionMWServeURL = $_ENV("MEDIAWIKI_PDF_RENDERER_URL");
+
+$wgGroupPermissions['user']['collectionsaveascommunitypage'] = true;
+$wgGroupPermissions['user']['collectionsaveasuserpage'] = true;

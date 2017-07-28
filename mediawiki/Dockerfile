@@ -46,4 +46,9 @@ RUN wget https://extdist.wmflabs.org/dist/extensions/DeleteBatch-REL1_27-f6fe947
     && tar -xzf DeleteBatch-REL1_27-f6fe947.tar.gz -C /usr/src/mediawiki/extensions \
     && rm DeleteBatch-REL1_27-f6fe947.tar.gz
 
+# install Collection
+RUN wget https://extdist.wmflabs.org/dist/extensions/Collection-REL1_27-b883366.tar.gz \
+    && tar -xzf Collection-REL1_27-b883366.tar.gz -C /usr/src/mediawiki/extensions \
+    && rm Collection-REL1_27-b883366.tar.gz
+
 COPY CustomSettings.php /conf/
