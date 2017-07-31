@@ -10,4 +10,5 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 RUN pip install --no-cache-dir -U pip \
  && pip install --no-cache-dir ansible==$ANSIBLE_VERSION
 
+RUN mkdir -p /opt/ansible/roles && chown -R $USER:$USER /opt/ansible
 COPY ansible.cfg $HOME/.ansible.cfg
