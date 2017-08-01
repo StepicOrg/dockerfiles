@@ -62,7 +62,7 @@ $wgGroupPermissions['sysop']['deletebatch'] = true;
 
 require_once "$IP/extensions/Collection/Collection.php";
 
-$wgCollectionMWServeURL = $_ENV("MEDIAWIKI_PDF_RENDERER_URL");
+$wgCollectionMWServeURL = getenv('MEDIAWIKI_PDF_RENDERER_URL');
 
 $wgGroupPermissions['user']['collectionsaveascommunitypage'] = true;
 $wgGroupPermissions['user']['collectionsaveasuserpage'] = true;

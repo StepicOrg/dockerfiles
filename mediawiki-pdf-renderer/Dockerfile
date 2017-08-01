@@ -19,4 +19,6 @@ RUN pip install \
     mwlib==0.15.14 \
     mwlib.rl==0.14.5
 
+EXPOSE 8899
+
 CMD ["/bin/bash", "-c", "nserve & nslave --cachedir ~/cache/ & postman & mw-qserve"]
