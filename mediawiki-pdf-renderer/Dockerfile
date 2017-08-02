@@ -10,7 +10,8 @@ RUN apt-get update && apt-get install -y \
     python-lxml \
     libevent-dev \
     openssl \
-    ca-certificates
+    ca-certificates \
+    pdftk
 
 RUN easy_install pip
 
