@@ -66,3 +66,5 @@ $wgCollectionMWServeURL = getenv('MEDIAWIKI_PDF_RENDERER_URL');
 
 $wgGroupPermissions['user']['collectionsaveascommunitypage'] = true;
 $wgGroupPermissions['user']['collectionsaveasuserpage'] = true;
+
+wfLoadExtension( 'SyntaxHighlight_GeSHi' );
