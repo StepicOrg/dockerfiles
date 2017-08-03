@@ -11,7 +11,8 @@ RUN apt-get update && apt-get install -y \
     libevent-dev \
     openssl \
     ca-certificates \
-    pdftk
+    pdftk \
+    imagemagick
 
 RUN easy_install pip
 
