@@ -10,7 +10,7 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - \
 
 RUN apt-get update && apt-get install --no-install-recommends -y \
     nodejs=${NODEJS_VERSION}-1nodesource1~xenial1 bzip2 \
- && npm install -g npm@${NPM_VERSION} \
+ && npm install -g npm@${NPM_VERSION} grunt-cli \
  && rm -rf /var/lib/apt/lists/* /root/.npm ~/.npm /tmp/*
 
 RUN echo '{"interactive": false}' > $HOME/.bowerrc
