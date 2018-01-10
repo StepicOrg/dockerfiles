@@ -1,7 +1,7 @@
 FROM stepik/teamcity-agent-base:2017.1.2
 MAINTAINER Pavel Sviderski <ps@stepik.org>
 
-ENV NODEJS_VERSION 6.11.2
+ENV NODEJS_VERSION 6.12.3
 ENV NPM_VERSION 5.3.0
 
 # Install node.js repository
@@ -9,7 +9,7 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - \
  && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update && apt-get install --no-install-recommends -y \
-    nodejs=${NODEJS_VERSION}-1nodesource1~xenial1 bzip2 \
+    nodejs=${NODEJS_VERSION}-1nodesource1 bzip2 \
     # required for phantomjs
     libfontconfig1 \
  && npm install -g npm@${NPM_VERSION} grunt-cli \
