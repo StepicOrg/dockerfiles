@@ -10,6 +10,8 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - \
 
 RUN apt-get update && apt-get install --no-install-recommends -y \
     nodejs=${NODEJS_VERSION}-1nodesource1~xenial1 bzip2 \
+    # required for phantomjs
+    libfontconfig1 \
  && npm install -g npm@${NPM_VERSION} grunt-cli \
  && rm -rf /var/lib/apt/lists/* /root/.npm ~/.npm /tmp/*
 
