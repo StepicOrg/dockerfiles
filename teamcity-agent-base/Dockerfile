@@ -1,4 +1,4 @@
-FROM jetbrains/teamcity-minimal-agent:2017.1.2
+FROM jetbrains/teamcity-minimal-agent:2017.2.2
 MAINTAINER Pavel Sviderski <ps@stepik.org>
 
 ENV USER buildagent
