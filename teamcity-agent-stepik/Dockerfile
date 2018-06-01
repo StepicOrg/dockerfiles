@@ -1,7 +1,7 @@
-FROM stepik/teamcity-agent-base:2017.1.2
+FROM stepik/teamcity-agent-base:2017.2.2
 MAINTAINER Pavel Sviderski <ps@stepik.org>
 
-ENV DOCKER_VERSION 17.06.2
+ENV DOCKER_VERSION 17.09.0
 ENV DOCKER_GROUP_ID 233
 
 # Install docker binary (/var/run/docker.sock is mounted from the host)
