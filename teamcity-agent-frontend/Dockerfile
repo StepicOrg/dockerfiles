@@ -1,4 +1,4 @@
-FROM stepik/teamcity-agent-base:2017.2.2
+FROM stepik/teamcity-agent-base:2018.1.2
 MAINTAINER Pavel Sviderski <ps@stepik.org>
 
 ENV NODEJS_VERSION 10.6.0
