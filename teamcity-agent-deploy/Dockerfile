@@ -1,7 +1,7 @@
 FROM stepik/teamcity-agent-base:2018.1.2
 MAINTAINER Pavel Sviderski <ps@stepik.org>
 
-ENV ANSIBLE_VERSION 2.6.5
+ENV ANSIBLE_VERSION 2.7.10
 
 RUN apt-get update && apt-get install --no-install-recommends -y \
     python2.7 python2.7-dev python-setuptools python-pip gcc openssh-client wget \
