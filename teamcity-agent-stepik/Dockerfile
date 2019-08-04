@@ -12,5 +12,3 @@ RUN curl -o /tmp/docker.tgz https://download.docker.com/linux/static/stable/x86_
 
 # Create docker group and add build agent user to it to grant access to docker unix socket
 RUN groupadd -g $DOCKER_GROUP_ID docker && gpasswd -a $USER docker
-
-# TODO: python3.4 (edy), python3.6 (plugins)
