@@ -14,7 +14,7 @@ RUN apk --no-cache add build-base cmake git glib-dev mariadb-dev zlib-dev pcre-d
 
 FROM alpine:${ALPINE}
 
-RUN addgroup -S -g 1000 mydumper && adduser -S -G mydumper -u 999 mydumper \
+RUN addgroup -S -g 942 mydumper && adduser -S -G mydumper -u 942 mydumper \
     && apk add --no-cache su-exec mariadb-client mariadb-dev glib
 COPY --from=builder /usr/local/bin/mydumper /usr/local/bin/
 COPY --from=builder /usr/local/bin/myloader /usr/local/bin/

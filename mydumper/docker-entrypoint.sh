@@ -8,6 +8,7 @@ fi
 
 # allow the container to be started with `--user`
 if { [ "$1" = 'mydumper' ] || [ "$1" = 'myloader' ]; } && [ "$(id -u)" = '0' ]; then
+  chown -R mydumper:mydumper /backup
   exec su-exec mydumper "$0" "$@"
 fi
 
