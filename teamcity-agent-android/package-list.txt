@@ -1,4 +1,4 @@
-build-tools;26.0.2
+build-tools;30.0.3
 extras;android;m2repository
 extras;google;m2repository
-platforms;android-26
+platforms;android-30
