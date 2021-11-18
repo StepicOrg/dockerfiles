@@ -1,8 +1,8 @@
-FROM stepik/teamcity-agent-base:2021.1.1
+FROM stepik/teamcity-agent-base:2021.2
 
 ENV ANDROID_HOME /opt/android-sdk-linux
 
-RUN apt-get update && apt-get install --no-install-recommends -y gosu \
+RUN apt-get update && apt-get install --no-install-recommends -y \
     # required to build/install fastlane
     ruby ruby-dev g++ \
  && rm -rf /var/lib/apt/lists/*
