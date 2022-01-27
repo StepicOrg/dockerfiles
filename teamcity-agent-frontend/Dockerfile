@@ -1,16 +1,16 @@
-FROM stepik/teamcity-agent-base:2019.1.1
-MAINTAINER Pavel Sviderski <ps@stepik.org>
+FROM stepik/teamcity-agent-base:2021.2
 
-ENV NODEJS_VERSION 12.16.1
+ENV NODEJS_VERSION 14.18.3
 
 RUN apt-get update && apt-get install --no-install-recommends -y \
     bzip2 \
     gnupg \
     python3-venv \
- # Manually download and install a specific version of nodejs deb package.
- # apt-get allows to install only the latest version.
- && curl -o /tmp/nodejs.deb https://deb.nodesource.com/node_12.x/pool/main/n/nodejs/nodejs_${NODEJS_VERSION}-1nodesource1_amd64.deb \
- && apt install --no-install-recommends -y /tmp/nodejs.deb \
+ # Install node.js repository
+ && curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - \
+ && echo "deb https://deb.nodesource.com/node_14.x focal main" > /etc/apt/sources.list.d/nodesource.list \
+ && apt-get update && apt-get install --no-install-recommends -y \
+    nodejs=${NODEJS_VERSION}-deb-1nodesource1 \
  && npm install -g grunt-cli \
  && rm -rf /var/lib/apt/lists/* ~/.npm ~/.config /tmp/*
 
@@ -23,3 +23,12 @@ RUN curl -sSL https://dl.google.com/linux/linux_signing_key.pub | apt-key add - 
 	&& rm -rf /var/lib/apt/lists/*
 
 RUN echo '{"interactive": false}' > $HOME/.bowerrc
+
+USER $USER
+
+# Create python venv and install yamllint
+RUN python3 -m venv $HOME/.venv \
+    && $HOME/.venv/bin/pip install -U pip \
+    && $HOME/.venv/bin/pip install yamllint==1.20.0
+
+ENV PATH $HOME/.venv/bin:$PATH
