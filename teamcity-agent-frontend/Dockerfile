@@ -1,6 +1,6 @@
-FROM stepik/teamcity-agent-base:2021.2
+FROM stepik/teamcity-agent-base:2021.2.1
 
-ENV NODEJS_VERSION 14.18.3
+ENV NODEJS_VERSION 14.19.3
 
 RUN apt-get update && apt-get install --no-install-recommends -y \
     bzip2 \
