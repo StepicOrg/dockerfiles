@@ -1,4 +1,4 @@
-FROM stepik/teamcity-agent-base:2021.1.1
+FROM stepik/teamcity-agent-base:2021.2.1
 
 ENV DOCKER_VERSION 18.06.1
 ENV DOCKER_GROUP_ID 233
